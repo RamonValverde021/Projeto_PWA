@@ -1,25 +1,36 @@
-const CACHE_NAME = "meu-pwa-v1";
-const arquivos = ["/", "/index.html", "/style.css", "/script.js", "/icon.png"];
+const CACHE_NAME = "todo-pwa-v1";
+const FILES_TO_CACHE = [
+  "/",
+  "/index.html",
+  "/style.css",
+  "/app.js",
+  "/offline.html",
+  "/manifest.json",
+  "/icons/icon-192.png",
+  "/icons/icon-512.png"
+];
 
-self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(arquivos)));
+// Instala e faz cache
+self.addEventListener("install", e => {
+  e.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(FILES_TO_CACHE))
+  );
 });
 
-self.addEventListener("fetch", (event) => {
-  event.respondWith(caches.match(event.request).then(r => r || fetch(event.request)));
+// Ativa
+self.addEventListener("activate", e => {
+  e.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.map(key => {
+        if (key !== CACHE_NAME) return caches.delete(key);
+      }))
+    )
+  );
 });
 
-
-/*
-self.addEventListener("install", () => {
-  console.log("Service Worker instalado");
+// Fetch com fallback
+self.addEventListener("fetch", e => {
+  e.respondWith(
+    fetch(e.request).catch(() => caches.match(e.request).then(res => res || caches.match("/offline.html")))
+  );
 });
-
-self.addEventListener("activate", () => {
-  console.log("Service Worker ativado");
-});
-
-self.addEventListener("fetch", (event) => {
-  console.log("Interceptando:", event.request.url);
-});
-*/
