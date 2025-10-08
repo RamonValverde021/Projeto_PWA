@@ -2,7 +2,7 @@
   "name": "Lista de Tarefas PWA",
   "short_name": "Tarefas",
   "start_url": "index.html",
-  "display": ["standalone","fullscreen"],
+  "display": "fullscreen",
   "orientation": "landscape",
   "background_color": "#000000",
   "theme_color": "#000000", 
