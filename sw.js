@@ -4,7 +4,13 @@ const arquivosParaCache = [
   "/index.html",
   "/style.css",
   "/script.js",
-  "/icon.png"
+  "/icons/icon-192.png",
+  "/icons/icon-512.png",
+  "/manifest.json",
+  "/app.js",
+  "/offline.html",
+  "/script.js",
+  "/sw.js"
 ];
 
 self.addEventListener("install", (event) => {
