@@ -3,8 +3,10 @@ const botao = document.getElementById("botao");
     alert("Você clicou no botão 🚀");
 });
 
-setTimeout(() => {
-  let metaTheme = document.querySelector('meta[name="theme-color"]');
-  if (metaTheme) metaTheme.content = "#000000";
-}, 1000);
+const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
+if (darkMode) {
+  document.documentElement.classList.add('modo-escuro');
+} else {
+  document.documentElement.classList.add('modo-escuro');
+}
