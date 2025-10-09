@@ -4,21 +4,6 @@
   overflow: hidden;
 }
 
-@media (display-mode: fullscreen) {
-  body::after {
-    content: "";
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: env(safe-area-inset-bottom, 32px); /* altura típica da navbar */
-    background: #000;
-    pointer-events: none;
-    z-index: 9999;
-  }
-}
-
-
 html {
   background-color: #333;
   border: 5px solid blue;
