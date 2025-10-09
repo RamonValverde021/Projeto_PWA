@@ -3,6 +3,10 @@
   padding: 0;
   overflow: hidden;
 }
+.modo-escuro {
+  background-color: #000;
+  color: #fff;
+}
 
 html {
   background-color: #333;
