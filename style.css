@@ -4,13 +4,6 @@
   overflow: hidden;
 }
 
-:root {
-  color-scheme: dark;
-  background-color: #000;
-  color: #fff;
-}
-
-
 html {
   background-color: #333;
   border: 5px solid blue;
