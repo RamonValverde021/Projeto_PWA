@@ -4,6 +4,7 @@
   "start_url": "./index.html",
   "display": "fullscreen",
   "orientation": "landscape-primary",
+  "theme_color": "#225577",
   "icons": [
     {
       "src": "./icons/icon-192.png",
