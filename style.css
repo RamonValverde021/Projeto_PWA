@@ -9,6 +9,9 @@ html {
   border: 5px solid blue;
   margin: 0;
   padding: 0;
+
+  color: white;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 body {
